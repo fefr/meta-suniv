@@ -9,16 +9,12 @@ MACHINE_SOCARCH_SUFFIX_suniv = "-suniv"
 
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-suniv"
 PREFERRED_VERSION_linux-suniv ?= "4.15%"
-PREFERRED_PROVIDER_u-boot ?= "u-boot"
-PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot"
 
 MACHINE_EXTRA_RRECOMMENDS = "kernel-modules"
 
 UBOOT_LOCALVERSION = "-g${@d.getVar('SRCPV', True).partition('+')[2][0:7]}"
 
 UBOOT_ENTRYPOINT ?= "0x80008000"
-
-SPL_BINARY ?= "u-boot-sunxi-with-spl.bin"
 
 SERIAL_CONSOLE ?= "115200 ttyS0"
 MACHINE_FEATURES ?= "alsa apm keyboard rtc serial usbgadget usbhost vfat"
